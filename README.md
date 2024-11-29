@@ -3,6 +3,7 @@ Collecting some notes around the CMS Storyblok
 
 ## Problems & solutions
 
+### Slow API requests
 **Problem:** Next.js build took a long time, and individual pages took over 5 seconds to build whereas direct API calls where super fast.
 **Solution:** Set cache + increase [rate limit](https://www.storyblok.com/docs/api/content-delivery/v2/getting-started/rate-limit) in the `apiOptions`
 
@@ -18,6 +19,8 @@ storyblokInit({
   },
 })
 ```
+
+### Preview not updating
 
 **Problem:** Preview in the editor shows old content after saving. This happens with ISR and fallback blocking because new pages are only updated if the revalidate API is called or there's a timeout set.
 **Solution:** Use draft mode so that getStaticProps() is called on every request. Configure your Storyblok preview URL to `<<full url>>`/api/draft/?secret=<<some secret>>&slug=` the slug is automatically appended.
