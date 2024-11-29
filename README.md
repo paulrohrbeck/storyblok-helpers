@@ -25,7 +25,7 @@ storyblokInit({
 
 **Problem:** Preview in the editor shows old content after saving. This happens with ISR and fallback blocking because new pages are only updated if the revalidate API is called or there's a timeout set.
 
-**Solution:** Use draft mode so that getStaticProps() is called on every request. Configure your Storyblok preview URL to `<<full url>>`/api/draft/?secret=<<some secret>>&slug=` the slug is automatically appended.
+**Solution:** Use draft mode so that getStaticProps() is called on every request. Configure your Storyblok preview URL to `<<full url>>/api/draft/?secret=<<some secret>>&slug=` the slug is automatically appended.
 
 ```
 import { cookies, draftMode } from "next/headers"
