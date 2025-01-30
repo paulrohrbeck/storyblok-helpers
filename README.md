@@ -62,3 +62,9 @@ export async function GET(request) {
   redirect(`${redirectToSlug}?${searchParams.toString()}`)
 }
 ```
+
+### Resolve comments from deleted pages
+**Problem:** You click on a comment but get the error "Sorry, the page you have requested has been deleted.". Now you're stuck with an unresolvable comment in your queue.
+
+**Solution:** From the link above you can get the `discussionId`. With that, you can call the Resolve Discussion API: https://www.storyblok.com/docs/api/management/core-resources/discussions/resolve-a-discussion
+
